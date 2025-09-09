@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-gray-300">
+    <footer className="bg-gradient-to-r from-blue-600 to-blue-800  text-gray-300">
       <div className="container mx-auto py-10 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
           {/* Column 1: Mission Statement & Social Links */}
@@ -124,11 +124,11 @@ const Footer = () => {
       </div>
       
       {/* Bottom Bar */}
-      <div className="bg-blue-800 py-4">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 py-4">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
           <div className="mb-2 md:mb-0">
             © 2023 SpeakUp. All Rights Reserved.
-          </div>
+          </div> 
           <div className="flex space-x-4">
             <a href="#" className="hover:text-white">Terms & Conditions</a>
             <a href="#" className="hover:text-white">Privacy Policy</a>
