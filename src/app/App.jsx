@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router'
 import Layout from '../layout/Layout'
 import AboutUsPage from '../pages/AboutUsPage/AboutUsPage'
+import HomePage from '../pages/HomePage/HomePage'
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <div>
@@ -15,7 +15,7 @@ function App() {
           <Route path="/about" element={<h2>About</h2>} />
           <Route path="/about" element={<h2>About</h2>} />
           <Route path="/about" element={<h2>About</h2>} />
-          <Route path="/about" element={<h2>About</h2>} />
+          <Route index element={<HomePage/>} />
         </Route>
       </Routes>
 
