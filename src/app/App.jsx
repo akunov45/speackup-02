@@ -1,8 +1,22 @@
-import React from 'react'
-
+import { Routes, Route } from 'react-router'
+import Layout from '../layout/Layout'
+import CoursesPage from '../pages/Courses/CoursesPage'
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />} >
+          <Route path="/about" element={<h2>About</h2>} />
+          <Route path="/about" element={<h2>About</h2>} />
+          <Route path="/courses" element={<CoursesPage/>} />
+          <Route path="/about" element={<h2>About</h2>} />
+          <Route path="/about" element={<h2>About</h2>} />
+          <Route path="/about" element={<h2>About</h2>} />
+          <Route path="/about" element={<h2>About</h2>} />
+        </Route>
+      </Routes>
+
+    </div>
   )
 }
 
