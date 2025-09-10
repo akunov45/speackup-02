@@ -1,40 +1,52 @@
 import React from 'react';
-import { BsArrowRight } from 'react-icons/bs';
 
 const HomeTest = () => {
   return (
-    <header className="bg-white p-8 md:p-16 flex flex-col md:flex-row items-center justify-between container mx-auto">
-      <div className="flex flex-col md:flex-row items-center w-full">
-        {/* Left Section */}
-        <div className="md:w-1/2 md:pr-10 mb-8 md:mb-0">
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">Test Your English</h1>
-          <p className="text-gray-600 leading-relaxed max-w-lg">
-            Try our quick, free online tests to find out what your level of English is, and which <span className="font-bold text-blue-500">SpeakUp English Qualification</span> might be best for you. There are tests suited for every level.
-          </p>
-        </div>
-        
-        {/* Right Section */}
-        <div className="md:w-1/2 flex items-center justify-center relative">
-          <div className="relative w-full max-w-md h-32 md:h-48">
-            {/* Background shape */}
-            <div className="absolute inset-0 bg-blue-500 rounded-lg transform skew-x-12 -rotate-3 z-0"></div>
-            
-            {/* Button container */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full">
-              <button className="bg-white text-blue-700 font-bold py-4 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center w-full max-w-[250px] mx-auto">
-                Test Your English
-                <BsArrowRight className="ml-2" />
-              </button>
-            </div>
-
-            {/* Blue waves */}
-            <div className="absolute right-0 bottom-0 w-3/4 h-3/4 overflow-hidden z-0">
+    <div className="bg-gray-100 px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16">
+      <div className="container mx-auto max-w-6xl">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
+          {/* Left Section */}
+          <div className="w-full lg:w-1/2 text-center lg:text-left">
+            <p className="text-2xl sm:text-3xl md:text-4xl text-gray-800 leading-relaxed font-semibold">
+              Free online tests to find out your level of English, with{' '}
+              <span className="text-blue-600">SpeakUp</span>.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-800 leading-relaxed mt-4">
+              There are tests suited for every level.
+            </p>
+          </div>
+          
+          {/* Right Section */}
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+              {/* Blue background shape */}
+              <div className="relative bg-blue-600 rounded-3xl w-full h-40 sm:h-48 md:h-56 overflow-hidden shadow-xl">
+                {/* Wavy pattern overlay */}
+                <div className="absolute inset-0">
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                      <pattern id="waves" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M0 20 Q 10 10 20 20 T 40 20" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="1" fill="none"/>
+                        <path d="M0 10 Q 10 0 20 10 T 40 10" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" fill="none"/>
+                        <path d="M0 30 Q 10 20 20 30 T 40 30" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" fill="none"/>
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#waves)"/>
+                  </svg>
+                </div>
+                
+                {/* Button */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <button className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-200 text-sm sm:text-base md:text-lg">
+                    Test Your English
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
-    </header>
+    </div>
   );
 };
 

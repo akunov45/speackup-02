@@ -4,16 +4,16 @@ import { FaRegUser } from "react-icons/fa6";
 
 const menu = [
   { name: 'Home', href: '/',},
-  { name: 'Courses', href: '#', },
-  { name: 'Contact us', href: '#',},
-  { name: 'About us', href: '#', },
+  { name: 'Courses', href: '', },
+  { name: 'Contact us', href: '',},
+  { name: 'About us', href: '', },
 ];
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="container mx-auto">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 ">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             {/* Logo */}
@@ -133,7 +133,7 @@ const Header = () => {
         </div>
       )}
       {/* Promotion Bar */}
-      <div className="bg-blue-900 text-yellow-400 text-center py-2 px-4">
+      <div className="bg-blue-900 text-yellow-400 text-center font-bold py-2 ">
         Get 50% off SpeakUp Premium & unlock new language superpowers!
       </div>
     </nav>
