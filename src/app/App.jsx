@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router'
 import Layout from '../layout/Layout'
+import TestPage from '../pages/TestPage/TestPage'
 
 const App = () => {
   return (
@@ -7,7 +8,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />} >
           <Route path="/about" element={<h2>About</h2>} />
-          <Route path="/test" element={<h2>Test page</h2>} />
+          <Route path="/test" element={<TestPage />} />
           <Route path="/about" element={<h2>About</h2>} />
           <Route path="/about" element={<h2>About</h2>} />
           <Route path="/about" element={<h2>About</h2>} />
