@@ -4,16 +4,16 @@ import { FaRegUser } from "react-icons/fa6";
 
 const menu = [
   { name: 'Home', href: '/',},
-  { name: 'Courses', href: '#', },
-  { name: 'Contact us', href: '#',},
-  { name: 'About us', href: '#', },
+  { name: 'Courses', href: '', },
+  { name: 'Contact us', href: '',},
+  { name: 'About us', href: '', },
 ];
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="container mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 ">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             {/* Logo */}
@@ -23,7 +23,7 @@ const Header = () => {
               </a>
             </div>
             {/* Desktop Navigation Links */}
-            <div className="hidden md:block">
+            <div className="hidden md:block ml-10 flex items-center justify-center ">
               <div className="ml-10 flex items-baseline space-x-4">
                 {menu.map((item) => (
                   <a
@@ -39,8 +39,8 @@ const Header = () => {
           </div>
           <div className="hidden md:flex items-center">
             {/* User Icon and Language Switch */}
-            <div className="flex-shrink-0">
-              <button className="p-1 rounded-full text-gray-900 hover:text-black-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+            <div className="flex-shrink-0 ">
+              <button className="p-1 rounded-full text-gray-900 hover:text-black-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white ">
               <FaRegUser />
 
               </button>
@@ -49,9 +49,9 @@ const Header = () => {
               <select className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                 <option>EN</option>
                 <option>ES</option>
-                <option>FR</option>
+                <option>FR</option>       
               </select>
-            </div>
+            </div> 
           </div>
           {/* Mobile Menu Button */}
           <div className="-mr-2 flex md:hidden">
@@ -133,7 +133,7 @@ const Header = () => {
         </div>
       )}
       {/* Promotion Bar */}
-      <div className="bg-blue-900 text-white text-center py-2 px-4">
+      <div className="bg-blue-900 text-yellow-400 text-center font-bold py-2 ">
         Get 50% off SpeakUp Premium & unlock new language superpowers!
       </div>
     </nav>
