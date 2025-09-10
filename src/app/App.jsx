@@ -12,7 +12,6 @@ const App = () => {
           <Route index element={<HomePage/>} />
         </Route>
       </Routes>
-
     </div>
   )
 }
