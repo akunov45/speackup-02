@@ -4,7 +4,7 @@ import React from 'react';
 
 const Header2 = () => {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between bg-blue-600 text-white rounded-lg shadow-lg my-8">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center mt-0 bg-blue-600 text-white h-150 shadow-lg my-8">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         {/* Left Section - Text and Button */}
         <div className="flex-1 text-center md:text-left mb-12 md:mb-0">
@@ -17,8 +17,7 @@ const Header2 = () => {
           <button className="mt-8 px-6 py-3 bg-yellow-400 text-blue-800 font-bold rounded-full hover:bg-yellow-300 transition duration-300">
             Let's start
           </button>
-        </div>
-
+        </div>  
         {/* Right Section - Illustration */}
         <div className="flex-1 flex justify-center md:justify-end">
           {/* Replace this div with your actual image component */}
