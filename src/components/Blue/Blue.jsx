@@ -1,18 +1,27 @@
 import React from 'react';
+import { NavLink } from 'react-router';
+import { motion } from 'framer-motion';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
+const animation = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1.5 } }
+};
 
 const HomeTest = () => {
-  return (
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
+
+  const content = (
     <div className="bg-gray-100 px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
           {/* Left Section */}
           <div className="w-full lg:w-1/2 text-center lg:text-left">
-            <p className="text-2xl sm:text-3xl md:text-4xl text-gray-800 leading-relaxed font-semibold">
-              Free online tests to find out your level of English, with{' '}
-              <span className="text-blue-600">SpeakUp</span>.
-            </p>
-            <p className="text-base sm:text-lg md:text-xl text-gray-800 leading-relaxed mt-4">
-              There are tests suited for every level.
+            <h2 className="text-3xl lg:text-4xl md:text-4xl font-bold text-gray-900 mb-4">
+              Test your English
+            </h2>
+            <p className="text-lg lg:text-2xl md:text-2xl text-gray-800 leading-relaxed font-semibold">
+              Try our quick, free online tests to find out what your level of English is, and which <span className="text-blue-600">SpeakUp</span>. English Qualification might be best for you. There are tests suited for every level.
             </p>
           </div>
           
@@ -37,9 +46,9 @@ const HomeTest = () => {
                 
                 {/* Button */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-200 text-sm sm:text-base md:text-lg">
+                  <NavLink to={"/test"} className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-200 text-sm sm:text-base md:text-lg">
                     Test Your English
-                  </button>
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -47,6 +56,14 @@ const HomeTest = () => {
         </div>
       </div>
     </div>
+  );
+
+  return isDesktop ? (
+    <motion.div variants={animation} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+      {content}
+    </motion.div>
+  ) : (
+    content
   );
 };
 

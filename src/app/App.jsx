@@ -13,10 +13,17 @@ import CoursesPage from '../pages/Courses/CoursesPage'
 
 
 
+// App.js
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
+
+// Пример компонентов страниц
 
 const App = () => {
+   const { t } = useTranslation();
   return (
+    
     <div>
       <Routes>
         <Route path="/" element={<Layout />} >

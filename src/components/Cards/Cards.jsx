@@ -1,4 +1,8 @@
+import React from 'react';
 import { FaBookBookmark, FaUserGraduate, FaGraduationCap, FaStar } from "react-icons/fa6";
+import { NavLink } from "react-router-dom"; // Use NavLink from react-router-dom
+import { motion } from "framer-motion";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const courses = [
   {
@@ -51,7 +55,25 @@ const courses = [
   },
 ];
 
+const cardHover = {
+  scale: 1.05,
+  transition: {
+    duration: 0.5,
+    ease: "easeInOut"
+  }
+};
+
+const cardTap = {
+  scale: 0.95,
+  transition: {
+    duration: 0.2,
+    ease: "easeInOut"
+  }
+};
+
 export default function PopularCourses() {
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
+
   return (
     <div className="w-full bg-white py-12">
       <div className="max-w-6xl mx-auto px-4">
@@ -59,9 +81,11 @@ export default function PopularCourses() {
         <h2 className="text-2xl font-bold text-blue-600 mb-8">Popular Course</h2>
 
         {/* Сетка карточек */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 hover:cursor-pointer hover:shadow-lg transition-shadow duration-300 hover-">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 hover:cursor-pointer">
           {courses.map((course) => (
-            <div
+            <motion.div
+              whileHover={isDesktop ? cardHover : {}}
+              whileTap={!isDesktop ? cardTap : {}}
               key={course.id}
               className="rounded-xl shadow-md overflow-hidden bg-white hover:shadow-lg transition"
             >
@@ -93,15 +117,15 @@ export default function PopularCourses() {
 
                 {/* Кнопка */}
                 <div className="flex items-center justify-between">
-                  <button className="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                  <NavLink to="/test" className="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
                     Start Course
-                  </button>
+                  </NavLink>
                   <span className="flex items-center text-orange-500 text-sm">
                     <FaStar className="mr-1" /> 5.0
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
